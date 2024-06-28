@@ -184,7 +184,13 @@ button{
 
 
 <script>
-
+  window.onload = function() {
+    var el = document.documentElement,
+        rfs = el.requestFullScreen
+        || el.webkitRequestFullScreen
+        || el.mozRequestFullScreen;
+    rfs.call(el);
+};
 </script>
 
 <script src="script.js"></script>
