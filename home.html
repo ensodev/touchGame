@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width1, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+body{
+    background-color: rgb(83, 70, 54);
+    user-select:none;
+}
+
+#labell{
+    color:white;
+    font-size: 20px;
+}
+
+.mainDiv{
+    text-align: center;
+    padding-top:15px;
+}
+
+#life, #numberPicked2, #gameLevel, #point{
+    padding:10px;
+    color:red;
+    font-size:25px;
+}
+
+ 
+
+#numberPicked{
+    text-align: center;
+    width:100px;
+    font-size:20px;
+    border-radius: 10px;
+
+}
+
+
+#item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9  {
+    font-size:40px;
+    padding:10px 20px;
+    border:4px solid white;
+    cursor: pointer;
+
+}
+
+.row1{
+    margin-bottom: 25px;
+    text-align: center;
+}
+.records{
+    margin-bottom:10px ;
+}
+
+.seletedInput{
+    margin-bottom: 30px;
+}
+
+#item1{
+    background-color: red;
+}
+
+#item2{
+    background-color: skyblue;
+}
+
+#item3{
+    background-color: green;
+}
+
+#item4{
+    background-color: pink;
+}
+
+#item5{
+    background-color: yellow;
+}
+
+#item6{
+    background-color: gray;
+}
+#item7{
+    background-color: purple;
+}
+#item8{
+    background-color: brown;
+}
+#item9{
+    background-color: darkgoldenrod;
+}
+
+button{
+    padding:5px 5px;
+    border-radius: 10px;
+    font-size:15px;
+    cursor: pointer;
+}
+
+#palyerNameDom, #palyerLevelDom{
+    color:darkgoldenrod;
+    font-size: 20px;
+    cursor: pointer;
+}
+    
+</style>
+
+<body>
+    
+        <!-- <audio autoplay loop>
+            <source id="backgroundAudio" src="/6.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio> -->
+ 
+    <div class="mainDiv">
+        
+        <div class="records">
+            <span id="labell">Life</span>
+            <span id="life">
+                        0
+            </span>
+            <!-- <label for="">Scores</label> -->
+            <span id="scores" hidden>
+                        0
+            </span>
+
+            <!-- <label for="">occur</label> -->
+            <span id="occur" hidden>
+                        0
+            </span>
+            
+            <span id="labell">Point</span>
+            <span id="point">0</span>
+
+            <span id="labell"> Playing </span>
+            <span id="numberPicked2" >0</span>
+        </div>
+
+        <div class="seletedInput">
+            <input type="text"  id="numberPicked" placeholder="1-9"/>
+        </div>
+
+        <div class="row1">
+            <span class="items" id="item1">1</span>
+            <span class="items" id="item2">2</span>
+            <span class="items" id="item3">3</span>
+       </div>
+       <div class="row1">
+            <span class="items" id="item4">4</span>
+            <span class="items" id="item5">5</span>
+            <span class="items" id="item6">6</span>
+       </div>
+       <div class="row1">
+            <span class="items" id="item7">7</span>
+            <span class="items" id="item8">8</span>
+            <span class="items" id="item9">9</span>
+        </div>
+        <div>
+            <span id="labell">Levels</span>
+            <br> 
+            <span id="gameLevel">0</span>
+       </div>   
+       <br>
+       
+        <button class="botton" id="botton">Start</button>
+        <br>
+        <button  id="coninue">Coninue</button>
+        <br>
+        <button id="pause">Pause</button>
+        <br>
+        <button  id="stopper">End Game</button>
+        <br>
+        <h5 id="palyerNameDom"></h5>
+        <a href=""><h5 id="palyerLevelDom"></h5></a>
+        
+       
+
+       
+        
+    </div><!--   end row    -->
+</body>
+
+
+<script>
+
+</script>
+
+<script src="script.js"></script>
+</html>
+
