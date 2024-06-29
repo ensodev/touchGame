@@ -71,8 +71,8 @@ let item6 = document.getElementById('item6');
 let item7 = document.getElementById('item7');
 let item8 = document.getElementById('item8');
 let item9 = document.getElementById('item9');
-let menu = document.getElementById('menu');
-let goScoresPage = document.getElementById('goScoresPage');
+// let menu = document.getElementById('menu');
+// let goScoresPage = document.getElementById('goScoresPage');
 
 let life = document.getElementById('life');
 
@@ -116,8 +116,8 @@ item9.addEventListener('click', getResult);
 pause.addEventListener('click', pauseGame);
 coninue.addEventListener('click', coninueGame);
 stopper.addEventListener('click', stopGame);
-menu.addEventListener('click', showMenu);
-goScoresPage.addEventListener('click', showScores);
+// menu.addEventListener('click', showMenu);
+// goScoresPage.addEventListener('click', showScores);
 
 
 pause.style.visibility="hidden";
@@ -620,13 +620,13 @@ function getHighestPlayer(){
 
 }
 
-function showMenu(){
-  window.location.href = 'menu.html';
-}
+// function showMenu(){
+//   window.location.href = 'menu.html';
+// }
 
-function showScores(){
-  window.location.href = 'scores.html';
-}
+// function showScores(){
+//   window.location.href = 'scores.html';
+// }
 
 
 
