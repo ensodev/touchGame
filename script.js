@@ -5,7 +5,7 @@ let playerLevel; //variable not in use
 let levelPlaying;
 let choosen;
 
-playerName = prompt('What is you name');
+playerName = prompt('What is your name');
 
  var level =  prompt(`Enter the corect number for prefer Skill Level
   1:  For Expert
@@ -71,6 +71,8 @@ let item6 = document.getElementById('item6');
 let item7 = document.getElementById('item7');
 let item8 = document.getElementById('item8');
 let item9 = document.getElementById('item9');
+let menu = document.getElementById('menu');
+let goScoresPage = document.getElementById('goScoresPage');
 
 let life = document.getElementById('life');
 
@@ -114,6 +116,8 @@ item9.addEventListener('click', getResult);
 pause.addEventListener('click', pauseGame);
 coninue.addEventListener('click', coninueGame);
 stopper.addEventListener('click', stopGame);
+menu.addEventListener('click', showMenu);
+goScoresPage.addEventListener('click', showScores);
 
 
 pause.style.visibility="hidden";
@@ -263,7 +267,7 @@ function getResult(e){
 
     }
   }else{
-    alert("Kindly select a number to play and click start button tp play and"); 
+    alert("Kindly select a number to play, click ok and click start button to play"); 
   }
 
   checkScores();/////////////////////////////////////////
@@ -271,7 +275,7 @@ function getResult(e){
 }
 
 function hideMe(){
-  getHighestPlayer();
+  //getHighestPlayer();
   //this is where new game start
   if(parseInt(numberPicked.value) > 0){
     if(parseInt(numberPicked.value) < 10){
@@ -615,6 +619,15 @@ function getHighestPlayer(){
   `);
 
 }
+
+function showMenu(){
+  window.location.href = 'menu.html';
+}
+
+function showScores(){
+  window.location.href = 'scores.html';
+}
+
 
 
 
