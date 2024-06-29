@@ -165,9 +165,13 @@ button{
        <br>
        
         <button class="botton" id="botton">Start</button>
+        
         <br>
+        <button  id="menu">Menu</button>
         <button  id="coninue">Coninue</button>
+        <button  id="goScoresPage">Score</button>
         <br>
+        
         <button id="pause">Pause</button>
         <br>
         <button  id="stopper">End Game</button>
@@ -184,23 +188,6 @@ button{
 
 
 <script>
- to be a cross browser solution
-
-// Find the right method, call on correct element
-function launchFullScreen(element) {
-  if(element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
-  }
-}
-
-// Launch fullscreen for browsers that support it!
-launchFullScreen(document.documentElement); // the whole page
-launchFullScreen(document.getElementById("videoElement")); // any individual element
-
 
 </script>
 
