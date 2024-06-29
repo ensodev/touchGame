@@ -48,22 +48,23 @@ function getHighestPlayer(){
 }
 
 function clearScores(){
-    localStorage.setItem('expertHighestScore', "0");
-    localStorage.setItem('expertHighestName', "");
+    
+   // localStorage.setItem('expertHighestScore', "0");
+   // localStorage.setItem('expertHighestName', "");
 
-    localStorage.setItem('difiHighestScore', "0");
-    localStorage.setItem('difiHighestName', "");
+   // localStorage.setItem('difiHighestScore', "0");
+    // localStorage.setItem('difiHighestName', "");
 
-    localStorage.setItem('normalHighestScore', "0");
-    localStorage.setItem('normalHighestName', "");
+    //localStorage.setItem('normalHighestScore', "0");
+    //localStorage.setItem('normalHighestName', "");
   
-    localStorage.setItem('easyHighestScore', "0");
-    localStorage.setItem('easyHighestName', "");
+    //localStorage.setItem('easyHighestScore', "0");
+    //localStorage.setItem('easyHighestName', "");
   
-    localStorage.setItem('beginnersHighestScore', "0");
-    localStorage.setItem('beginnersHighestName', "");
+    //localStorage.setItem('beginnersHighestScore', "0");
+    //localStorage.setItem('beginnersHighestName', "");
 
-    alert("All scores Cleared");
+    alert("Clear Score presently deactivated");
 
     getHighestPlayer();
 
