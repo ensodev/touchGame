@@ -12,18 +12,7 @@ let saveGameLevel  = parseInt(localStorage.getItem('saveGameLevel'));
 let saveGameChoosen = localStorage.getItem('saveGameChoosen');
 let saveGameNumberPic = parseInt(localStorage.getItem('saveGameNumberPic'));
 let saveGameLevelPlaying = parseInt(localStorage.getItem('saveGameLevelPlaying')); //speed
-
-if(saveGameLife > 0){
-	
-	scoreJs = localStorage.setItem('saveGameScore', saveGameScore);
-	gamePointJs = localStorage.setItem('saveGameLife', saveGameLife);
-	gameLevelJs = localStorage.setItem('saveGameLevel', saveGameLevel);
-	choosen = localStorage.setItem('saveGameChoosen', saveGameChoosen);
-	numPickGlobal = localStorage.setItem('saveGameNumberPic', saveGameNumberPic); 
-	levelPlaying = localStorage.setItem('saveGameLevelPlaying', saveGameLevelPlaying); 
-
-	coninueGame();
-}
+//..................................
 
 playerName = prompt('What is your name');
 
@@ -32,7 +21,8 @@ playerName = prompt('What is your name');
   2:  For DIfficult
   3:  For Normal
   4:  For Easy
-  5:  For Beginner`);
+  5:  For Beginner
+  6:  Continue`);
 
   if(level == 1 ){
     levelPlaying = 800;
@@ -54,6 +44,13 @@ playerName = prompt('What is your name');
     levelPlaying = 1250;
     choosen = "Beginner";
     // return levelPlaying;
+  }else if (level == 6){
+      	scoreJs = localStorage.setItem('saveGameScore', saveGameScore);
+      	gamePointJs = localStorage.setItem('saveGameLife', saveGameLife);
+	gameLevelJs = localStorage.setItem('saveGameLevel', saveGameLevel);
+	choosen = localStorage.setItem('saveGameChoosen', saveGameChoosen);
+	numPickGlobal = localStorage.setItem('saveGameNumberPic', saveGameNumberPic); 
+	levelPlaying = localStorage.setItem('saveGameLevelPlaying', saveGameLevelPlaying);   
   }else{
     levelPlaying = 1500;
     choosen = "Pratice";
@@ -64,11 +61,23 @@ playerName = prompt('What is your name');
 
 tt = levelPlaying;
 
+let tempResult;
+let scoreJs;
+let gamePointJs;
+let gameLevelJs;
 
-let tempResult = 100;
-let scoreJs = 0;
-let gamePointJs =0;
-let gameLevelJs = 1;
+if(gameLevelJs < 0 ){
+	tempResult = 100;
+	scoreJs = 0;
+	gamePointJs =0;
+	gameLevelJs = 1;
+}else{
+	tempResult = gamePointJs;
+	scoreJs = scoreJs;
+	gamePointJs =gamePointJs;
+	gameLevelJs = gameLevelJs;
+	
+}
 
 let changeLevel;
 
@@ -656,7 +665,8 @@ function clearSaveGame(){
   	localStorage.setItem('saveGameLife', '0'); //gamePointJs
 	localStorage.setItem('saveGameLevel', '0');  //gameLevelJs
 	localStorage.setItem('saveGameChoosen', '0'); //choosen
-	localStorage.setItem('saveGameNumberPic', '0'); //numPickGlobal	
+	localStorage.setItem('saveGameNumberPic', '0'); //numPickGlobal
+	localStorage.setItem('saveGameLevelPlaying', '0'); //levelPlaying
 
 	
 	
@@ -672,6 +682,8 @@ function saveGame(){
 	localStorage.setItem('saveGameLevel', gameLevelJs);  //gameLevelJs
 	localStorage.setItem('saveGameChoosen', choosen); //choosen
 	localStorage.setItem('saveGameNumberPic', numPickGlobal); //numPickGlobal
+	localStorage.setItem('saveGameLevelPlaying', levelPlaying); //levelPlaying
+	
 
 
 }
