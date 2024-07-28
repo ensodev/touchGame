@@ -5,6 +5,26 @@ let playerLevel; //variable not in use
 let levelPlaying;
 let choosen;
 
+//globals for saving games
+let saveGameScore = parseInt(localStorage.getItem('saveGameScore'));
+let saveGameLife = parseInt(localStorage.getItem('saveGameLife')); //Point
+let saveGameLevel  = parseInt(localStorage.getItem('saveGameLevel'));
+let saveGameChoosen = localStorage.getItem('saveGameChoosen');
+let saveGameNumberPic = parseInt(localStorage.getItem('saveGameNumberPic'));
+let saveGameLevelPlaying = parseInt(localStorage.getItem('saveGameLevelPlaying')); //speed
+
+if(saveGameLife > 0){
+	
+	scoreJs = localStorage.setItem('saveGameScore', saveGameScore);
+	gamePointJs = localStorage.setItem('saveGameLife', saveGameLife);
+	gameLevelJs = localStorage.setItem('saveGameLevel', saveGameLevel);
+	choosen = localStorage.setItem('saveGameChoosen', saveGameChoosen);
+	numPickGlobal = localStorage.setItem('saveGameNumberPic', saveGameNumberPic); 
+	levelPlaying = localStorage.setItem('saveGameLevelPlaying', saveGameLevelPlaying); 
+
+	coninueGame();
+}
+
 playerName = prompt('What is your name');
 
  var level =  prompt(`Enter the corect number for prefer Skill Level
@@ -143,10 +163,12 @@ let image9="darkgoldenrod";
 
 
 
-
+//game start her
 function myTimer() { 
     numPickGlobal = parseInt(numberPicked.value);
-  
+
+    //random numbers are gotten from stored in two variable
+    // the occurance method where user selection are determing to be right or wrong is called
     var myRand = Math.floor((Math.random() * 9) + 1);
     item1.innerHTML = myRand;
     activeItemGlobal = item1;
@@ -208,10 +230,12 @@ function myTimer() {
     item9.innerHTML = myRand;
     activeItemGlobal = item9;
     getRandmGlobal = myRand;
+    
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
 
     scores.innerHTML = scoreJs;
+    
 
     if(tempResult <= 0){
         clearInterval(inter);
@@ -225,18 +249,13 @@ function myTimer() {
         item7.style.visibility='hidden';
         item8.style.visibility='hidden';
         item9.style.visibility='hidden';
-        // item1.innerHTML = "1";
-        // item2.innerHTML = "2";
-        // item3.innerHTML = "3";
-        // item4.innerHTML = "4";
-        // item5.innerHTML = "5";
-        // item6.innerHTML = "6";
-        // item7.innerHTML = "7";
-        // item8.innerHTML = "8";
-        // item9.innerHTML = "9";
+
+	//clear score from memory
+        clearSaveGame();
         showMe();
     }
-
+    	//save present scores to the memory
+    	saveGame();
 }   
 
 
@@ -341,10 +360,12 @@ function showMe(){
   stopper.style.visibility = "hidden";
 }
 
+//users selection campared and increament or decrement in point are assigne to the
+//appropraite variables
 function occurance(){
   if(getRandmGlobal == numPickGlobal){
     tempResult = tempResult - 1;
-    life.innerHTML = tempResult;
+    life.innerHTML = tempResult; //life
     occur.innerHTML = parseInt(occur.innerHTML) + 1;
     point.innerHTML = gamePointJs; 
   }
@@ -353,7 +374,7 @@ function occurance(){
 
 }
 
-
+//re-assigning images and value to new button response
 function changeImage(item, randm){
   if(randm == 1 ){
     item.style.backgroundColor = "red";
@@ -376,7 +397,7 @@ function changeImage(item, randm){
   }  
 } 
 
- 
+//life and levels are handled in this method base on set conditions
 function checkScores(){
   if(scoreJs == 50 ){
 
@@ -394,7 +415,10 @@ function checkScores(){
     tempResult = parseInt(life.innerHTML);
 
     levelAudio();
-  }  
+  } 
+  //No matter what happen makesure you do this 
+
+  
 }
 
 function pauseGame(){
@@ -416,6 +440,7 @@ function pauseGame(){
 }
 
 function coninueGame(){
+  
   inter = setInterval(myTimer, tt);
   bakAud = setInterval(backAudioPlay, 15000);
   pause.style.visibility="visible";
@@ -620,13 +645,36 @@ function getHighestPlayer(){
 
 }
 
-// function showMenu(){
-//   window.location.href = 'menu.html';
-// }
+function clearSaveGame(){
+  // variable.....................
+  //saveGameScore:
+  //saveGameLife:
+  //saveGameChoosen:
+  //saveGameNumberPic:
+	
+  	localStorage.setItem('saveGameScore', '0'); //scoreJs
+  	localStorage.setItem('saveGameLife', '0'); //gamePointJs
+	localStorage.setItem('saveGameLevel', '0');  //gameLevelJs
+	localStorage.setItem('saveGameChoosen', '0'); //choosen
+	localStorage.setItem('saveGameNumberPic', '0'); //numPickGlobal	
 
-// function showScores(){
-//   window.location.href = 'scores.html';
-// }
+	
+	
+}
+
+function saveGame(){
+	//saveGameScore:
+  	//saveGameLife:
+  	//saveGameChoosen:
+  	//saveGameNumberPic:
+	localStorage.setItem('saveGameScore', scoreJs); //scoreJs
+  	localStorage.setItem('saveGameLife', gamePointJs); //gamePointJs
+	localStorage.setItem('saveGameLevel', gameLevelJs);  //gameLevelJs
+	localStorage.setItem('saveGameChoosen', choosen); //choosen
+	localStorage.setItem('saveGameNumberPic', numPickGlobal); //numPickGlobal
+
+
+}
 
 
 
