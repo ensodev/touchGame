@@ -147,70 +147,14 @@ let image9="darkgoldenrod";
 function myTimer() { 
     numPickGlobal = parseInt(numberPicked.value);
   
-    var myRand = Math.floor((Math.random() * 9) + 1);
-    item1.innerHTML = myRand;
-    activeItemGlobal = item1;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-      
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item2.innerHTML = myRand;
-    activeItemGlobal = item2;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-    
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item3.innerHTML = myRand;
-    activeItemGlobal = item3;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-    
-    
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item4.innerHTML = myRand;
-    activeItemGlobal = item4;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-    
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item5.innerHTML = myRand;
-    activeItemGlobal = item5;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-    
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item6.innerHTML = myRand;
-    activeItemGlobal = item6;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item7.innerHTML = myRand;
-    activeItemGlobal = item7;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item8.innerHTML = myRand;
-    activeItemGlobal = item8;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-
-    myRand = Math.floor((Math.random() * 9) + 1);
-    item9.innerHTML = myRand;
-    activeItemGlobal = item9;
-    getRandmGlobal = myRand;
-    occurance();
-    changeImage(activeItemGlobal, getRandmGlobal);
-
+    for(i=1; i<=9; i++){
+        var myRand = Math.floor((Math.random() * 9) + 1);
+        document.getElementById('item' + i).innerHTML = myRand;
+        activeItemGlobal = document.getElementById('item' + i);
+        getRandmGlobal = myRand;
+        occurance();
+        changeImage(activeItemGlobal, getRandmGlobal);
+    }
     scores.innerHTML = scoreJs;
 
     if(tempResult <= 0){
@@ -627,3 +571,4 @@ function getHighestPlayer(){
 // function showScores(){
 //   window.location.href = 'scores.html';
 // }
+
