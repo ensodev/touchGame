@@ -30,46 +30,30 @@ function getHighestPlayer(){
     normal.innerHTML = highestNormalName + " -- " +  highestNormalScore;
     easy.innerHTML = highestEasyName + " -- " +  highestEasyScore; 
 
-
-
-
-  
-    // alert(`
-    // BEST SCORE RECORD
-    // .................
-    // 1: Expert -- ${highestExpertName} score: ${higestExpertScores}
-    // 2: Difficult -- ${highestDifficultName} score: ${highestDifficultScore}
-    // 3: Normal -- ${highestNormalName} score: ${highestNormalScore}
-    // 4: Easy -- ${highestEasyName} score: ${highestEasyScore}
-    // 5: Beginner -- ${highestBeginnersName} score: ${highestBeginnersScore}
-  
-    
-    // `);
 }
 
 function clearScores(){
     
-   // localStorage.setItem('expertHighestScore', "0");
-   // localStorage.setItem('expertHighestName', "");
+    localStorage.setItem('expertHighestScore', "0");
+    localStorage.setItem('expertHighestName', "");
 
-   // localStorage.setItem('difiHighestScore', "0");
-    // localStorage.setItem('difiHighestName', "");
+    localStorage.setItem('difiHighestScore', "0");
+    localStorage.setItem('difiHighestName', "");
 
-    //localStorage.setItem('normalHighestScore', "0");
-    //localStorage.setItem('normalHighestName', "");
+    localStorage.setItem('normalHighestScore', "0");
+    localStorage.setItem('normalHighestName', "");
   
-    //localStorage.setItem('easyHighestScore', "0");
-    //localStorage.setItem('easyHighestName', "");
+    localStorage.setItem('easyHighestScore', "0");
+    localStorage.setItem('easyHighestName', "");
   
-    //localStorage.setItem('beginnersHighestScore', "0");
-    //localStorage.setItem('beginnersHighestName', "");
+    localStorage.setItem('beginnersHighestScore', "0");
+    localStorage.setItem('beginnersHighestName', "");
 
     alert("Clear Score presently deactivated");
 
     getHighestPlayer();
 
 }
-
 
 getHighestPlayer();
 
