@@ -92,9 +92,9 @@ let item9 = document.getElementById('item9');
 let toggleMusic = document.getElementById('toggleMusic');
 
 if(playSoundInGame == 'Y' || playSoundInGame == 'y'){
-      toggleMusic.style.backgroundColor = "red";
+        document.getElementById('toggleMusic').style.backgroundColor='red';
     }else{
-      toggleMusic.style.backgroundColor = "gray";
+       document.getElementById('toggleMusic').style.backgroundColor='gray';
 }
 
 // let menu = document.getElementById('menu');
@@ -571,4 +571,5 @@ function toggleMusicNow(e){
     }
 
 }
+
 
