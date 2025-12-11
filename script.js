@@ -91,10 +91,10 @@ let item9 = document.getElementById('item9');
 
 let toggleMusic = document.getElementById('toggleMusic');
 
-if(playSoundInGame == 'Y' || playSoundInGame == 'y'){
-        document.getElementById('toggleMusic').style.backgroundColor='red';
-    }else{
-       document.getElementById('toggleMusic').style.backgroundColor='gray';
+if (playSoundInGame === 'Y' || playSoundInGame === 'y') {
+        toggleButton.style.backgroundColor = 'red';
+    } else {
+        toggleButton.style.backgroundColor = 'gray';
 }
 
 // let menu = document.getElementById('menu');
@@ -571,5 +571,6 @@ function toggleMusicNow(e){
     }
 
 }
+
 
 
