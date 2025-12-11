@@ -155,29 +155,17 @@ function myTimer() {
         occurance();
         changeImage(activeItemGlobal, getRandmGlobal);
     }
+
     scores.innerHTML = scoreJs;
 
     if(tempResult <= 0){
         clearInterval(inter);
         clearInterval(bakAud);
-        item1.style.visibility='hidden';
-        item2.style.visibility='hidden';
-        item3.style.visibility='hidden';
-        item4.style.visibility='hidden';
-        item5.style.visibility='hidden';
-        item6.style.visibility='hidden';
-        item7.style.visibility='hidden';
-        item8.style.visibility='hidden';
-        item9.style.visibility='hidden';
-        // item1.innerHTML = "1";
-        // item2.innerHTML = "2";
-        // item3.innerHTML = "3";
-        // item4.innerHTML = "4";
-        // item5.innerHTML = "5";
-        // item6.innerHTML = "6";
-        // item7.innerHTML = "7";
-        // item8.innerHTML = "8";
-        // item9.innerHTML = "9";
+        
+        for(i=1; i<=9; i++){
+          document.getElementById('item' + i).style.visibility='hidden';
+        }
+
         showMe();
     }
 
@@ -232,16 +220,10 @@ function hideMe(){
       botton.style.visibility='hidden';
       numberPicked.style.visibility='hidden';
 
-      item1.style.visibility='visible';
-      item2.style.visibility='visible';
-      item3.style.visibility='visible';
-      item4.style.visibility='visible';
-      item5.style.visibility='visible';
-      item6.style.visibility='visible';
-      item7.style.visibility='visible';
-      item8.style.visibility='visible';
-      item9.style.visibility='visible';
-
+      for(i=1; i<=9; i++){
+        document.getElementById('item' + i).style.visibility='visible';
+      }
+      
       tempResult = 100;
       
       
@@ -348,15 +330,11 @@ function pauseGame(){
   coninue.style.visibility="visible";
   stopper.style.visibility= "visible";
   stopPauseAudio();
-  item1.style.visibility='hidden';
-  item2.style.visibility='hidden';
-  item3.style.visibility='hidden';
-  item4.style.visibility='hidden';
-  item5.style.visibility='hidden';
-  item6.style.visibility='hidden';
-  item7.style.visibility='hidden';
-  item8.style.visibility='hidden';
-  item9.style.visibility='hidden';
+  
+  for(i=1; i<=9; i++){
+    document.getElementById('item' + i).style.visibility='hidden';
+  }
+  
 }
 
 function coninueGame(){
@@ -366,15 +344,11 @@ function coninueGame(){
   coninue.style.visibility="hidden";
   stopper.style.visibility= "visible";
   // backAudioPlay();
-  item1.style.visibility='visible';
-  item2.style.visibility='visible';
-  item3.style.visibility='visible';
-  item4.style.visibility='visible';
-  item5.style.visibility='visible';
-  item6.style.visibility='visible';
-  item7.style.visibility='visible';
-  item8.style.visibility='visible';
-  item9.style.visibility='visible';
+  
+  for(i=1; i<=9; i++){
+    document.getElementById('item' + i).style.visibility='visible';
+  }
+  
 }
 
 function stopGame(){
@@ -384,15 +358,11 @@ function stopGame(){
 
   stopPauseAudio();
 
-  item1.style.visibility='hidden';
-  item2.style.visibility='hidden';
-  item3.style.visibility='hidden';
-  item4.style.visibility='hidden';
-  item5.style.visibility='hidden';
-  item6.style.visibility='hidden';
-  item7.style.visibility='hidden';
-  item8.style.visibility='hidden';
-  item9.style.visibility='hidden';
+  for(i=1; i<=9; i++){
+    document.getElementById('item' + i).style.visibility='hidden';;
+   
+  }
+  
 
   pause.style.visibility="hidden";
   coninue.style.visibility="hidden";
