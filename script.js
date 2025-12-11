@@ -7,7 +7,16 @@ let choosen;
 
 playerName = prompt('What is your name');
 
- var level =  prompt(`Enter the corect number for prefer Skill Level
+playSoundInGame = prompt(`Play Game Sound?
+  Type Y for Yes
+  Type N for No` );
+
+// setToggleMusicNow();
+
+
+function startGameB() {
+
+  var level =  prompt(`Enter the corect number for prefer Skill Level
   1:  For Expert
   2:  For DIfficult
   3:  For Normal
@@ -41,7 +50,15 @@ playerName = prompt('What is your name');
     // return levelPlaying;
   }
 
+}
 
+if(playerName == null || playerName == ""){ 
+  playerName = "Guest";
+}
+
+startGameB();
+
+  
 tt = levelPlaying;
 
 
@@ -71,6 +88,15 @@ let item6 = document.getElementById('item6');
 let item7 = document.getElementById('item7');
 let item8 = document.getElementById('item8');
 let item9 = document.getElementById('item9');
+
+let toggleMusic = document.getElementById('toggleMusic');
+
+if(playSoundInGame == 'Y' || playSoundInGame == 'y'){
+      toggleMusic.style.backgroundColor = "red";
+    }else{
+      toggleMusic.style.backgroundColor = "gray";
+}
+
 // let menu = document.getElementById('menu');
 // let goScoresPage = document.getElementById('goScoresPage');
 
@@ -103,19 +129,16 @@ palyerLevelDom.innerHTML = choosen;
 
 botton.addEventListener('click', hideMe);
 
-item1.addEventListener('click', getResult);
-item2.addEventListener('click', getResult);
-item3.addEventListener('click', getResult);
-item4.addEventListener('click', getResult);
-item5.addEventListener('click', getResult);
-item6.addEventListener('click', getResult);
-item7.addEventListener('click', getResult);
-item8.addEventListener('click', getResult);
-item9.addEventListener('click', getResult);
+
+for(i=1; i<=9; i++){
+  document.getElementById('item' + i).addEventListener('click', getResult);
+}  
+
 
 pause.addEventListener('click', pauseGame);
 coninue.addEventListener('click', coninueGame);
 stopper.addEventListener('click', stopGame);
+toggleMusic.addEventListener('click', toggleMusicNow);
 // menu.addEventListener('click', showMenu);
 // goScoresPage.addEventListener('click', showScores);
 
@@ -123,9 +146,6 @@ stopper.addEventListener('click', stopGame);
 pause.style.visibility="hidden";
 coninue.style.visibility="hidden";
 stopper.style.visibility="hidden";
-
-
-
 
 
 let inter; //settime
@@ -140,8 +160,6 @@ let image6="gray";
 let image7="purple";
 let image8="brown";
 let image9="darkgoldenrod";
-
-
 
 
 function myTimer() { 
@@ -238,11 +256,6 @@ function hideMe(){
       pause.style.visibility ="visible";
       stopper.style.visibility = "visible";
 
-      // localStorage.setItem('presentPlayerName', playerName);
-      
-      // localStorage.setItem('presentPlayingchoice', choosen);
-
-      // levelPlaying.setItem('presentPlayerScore', 0);
       
     }
   }else{
@@ -319,7 +332,9 @@ function checkScores(){
 
     tempResult = parseInt(life.innerHTML);
 
-    levelAudio();
+    if(playSoundInGame == 'Y' || playSoundInGame == 'y'){
+      levelAudio();
+    }
   }  
 }
 
@@ -390,13 +405,17 @@ function levelAudio() {
 
 
 function correctAudio() {
-  let getIt = new Audio('3.wav');
-  getIt.play();
+  if(playSoundInGame == "Y" || playSoundInGame == "y"){
+    let getIt = new Audio('3.wav');
+    getIt.play();
+  }
 }
 
 function wrongtAudio () {
-	let wrongIt = new Audio('2.wav');
-	wrongIt.play();
+  if(playSoundInGame == "Y" || playSoundInGame == "y"){
+    let wrongIt = new Audio('2.wav');
+    wrongIt.play();
+  }
 }
 
 function backAudioStop(){
@@ -405,13 +424,18 @@ function backAudioStop(){
 }
 
 function backAudioPlay(){
-  let backStopAudio  = new Audio('6.wav');
-  backStopAudio.play();
+  if(playSoundInGame == "Y" || playSoundInGame == "y"){
+    let backStopAudio  = new Audio('6.wav');
+    backStopAudio.play();
+  }
+
 }
 
 function stopPauseAudio() {
-  let stopGame = new Audio('8.wav');
-  stopGame.play();
+  if(playSoundInGame == "Y" || playSoundInGame == "y"){
+    let stopGame = new Audio('8.wav');
+    stopGame.play();
+  }
 }
 
 localStorage.getItem('dIfficultHighestScore');
@@ -534,11 +558,17 @@ function getHighestPlayer(){
 
 }
 
-// function showMenu(){
-//   window.location.href = 'menu.html';
-// }
+function toggleMusicNow(e){
+    e.preventDefault();
 
-// function showScores(){
-//   window.location.href = 'scores.html';
-// }
+    if(playSoundInGame == 'Y' || playSoundInGame == 'y'){
+      playSoundInGame = 'N';
+      toggleMusic.style.backgroundColor = "gray";
+      backAudioStop();
+    }else{
+      playSoundInGame = 'Y';
+      toggleMusic.style.backgroundColor = "red";
+    }
+
+}
 
