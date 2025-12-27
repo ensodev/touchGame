@@ -145,12 +145,15 @@ let image9="darkgoldenrod";
 
 
 function myTimer() { 
+	let m1 = 0, m2 = 0, m3 = 0, m4 = 0, m5 = 0, m6 = 0, m7 = 0, m8 = 0, m9 = 0;
+
     numPickGlobal = parseInt(numberPicked.value);
   
     var myRand = Math.floor((Math.random() * 9) + 1);
     item1.innerHTML = myRand;
     activeItemGlobal = item1;
     getRandmGlobal = myRand;
+	m1 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
       
@@ -158,6 +161,7 @@ function myTimer() {
     item2.innerHTML = myRand;
     activeItemGlobal = item2;
     getRandmGlobal = myRand;
+	m2 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
     
@@ -165,6 +169,7 @@ function myTimer() {
     item3.innerHTML = myRand;
     activeItemGlobal = item3;
     getRandmGlobal = myRand;
+	m3 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
     
@@ -173,6 +178,7 @@ function myTimer() {
     item4.innerHTML = myRand;
     activeItemGlobal = item4;
     getRandmGlobal = myRand;
+	m4 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
     
@@ -180,6 +186,7 @@ function myTimer() {
     item5.innerHTML = myRand;
     activeItemGlobal = item5;
     getRandmGlobal = myRand;
+	m5 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
     
@@ -187,6 +194,7 @@ function myTimer() {
     item6.innerHTML = myRand;
     activeItemGlobal = item6;
     getRandmGlobal = myRand;
+	m6 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
 
@@ -194,6 +202,7 @@ function myTimer() {
     item7.innerHTML = myRand;
     activeItemGlobal = item7;
     getRandmGlobal = myRand;
+	m7 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
 
@@ -201,6 +210,7 @@ function myTimer() {
     item8.innerHTML = myRand;
     activeItemGlobal = item8;
     getRandmGlobal = myRand;
+	m8 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
 
@@ -208,8 +218,12 @@ function myTimer() {
     item9.innerHTML = myRand;
     activeItemGlobal = item9;
     getRandmGlobal = myRand;
+	m9 = myRand;
     occurance();
     changeImage(activeItemGlobal, getRandmGlobal);
+
+	markz = array[m1,m2,m3,m4,m5,m6,m7,m8,m9];
+	checkJackPot(markz);
 
     scores.innerHTML = scoreJs;
 
@@ -239,6 +253,41 @@ function myTimer() {
 
 }   
 
+function checkJackPot(markz){
+	countz = 0;
+	
+	for (let val of markz) {
+  		
+		if (val === 1) {
+    		countz++; // / Add 1 to the count every time we find 
+  		}else if (val === 2) {
+    		countz++; /
+  		}else if (val === 3) {
+    		countz++; // Add 1 to the count every time we find a 5
+  		}else if (val === 4) {
+    		countz++; // Add 1 to the count every time we find a 5
+  		}else if (val === 5) {
+    		countz++; // Add 1 to the count every time we find a 5
+  		}else if (val === 6) {
+    		countz++; // Add 1 to the count every time we find a 5
+  		}else if (val === 7) {
+    		countz++; // Add 1 to the count every time we find a 5
+  		}else if (val === 8) {
+    		countz++; // Add 1 to the count every time we find a 5
+  		}else (val === 9) {
+    		countz++; // Add 1 to the count every time we find a 5
+  		}
+
+		checkjackPotCount(countz);
+	}
+}
+
+function checkjackPotCount(countz){
+	console.log( `Jackport ${countz} `);
+
+	let backStopAudio  = new Audio('jackport.mp3');
+  	backStopAudio.play();
+}
 
 function getResult(e){
   
