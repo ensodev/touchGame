@@ -346,9 +346,9 @@ function pauseGame(){
   stopper.style.visibility= "visible";
   stopPauseAudio();
   
-  for(i=1; i<=9; i++){
-    document.getElementById('item' + i).style.visibility='hidden';
-  }
+  // for(i=1; i<=9; i++){
+  //   document.getElementById('item' + i).style.visibility='hidden';
+  // }
   
 }
 
@@ -571,4 +571,5 @@ function toggleMusicNow(e){
     }
 
 }
+
 
